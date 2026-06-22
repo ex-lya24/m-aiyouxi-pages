@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 信息索引与资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f3ef;
+            color: #2c2b28;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ---------- 深色横幅头图 ---------- */
+        .hero {
+            background: linear-gradient(145deg, #1e1c1a 0%, #2a2723 100%);
+            color: #e8e3da;
+            padding: 5rem 2rem 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -40px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(210, 180, 120, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            color: #ede8dd;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #bfb6a8;
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.6;
+            border-top: 1px solid rgba(230, 215, 190, 0.25);
+            padding-top: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        /* ---------- 浅色正文区 ---------- */
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem 4rem 2rem;
+            flex: 1;
+        }
+
+        .section {
+            margin-bottom: 2.8rem;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.55rem;
+            font-weight: 450;
+            letter-spacing: 0.5px;
+            color: #36332e;
+            margin-bottom: 1rem;
+            border-left: 4px solid #b79a6b;
+            padding-left: 1rem;
+        }
+
+        .section p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            color: #3d3a35;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-card {
+            background: #f0ece6;
+            border-radius: 14px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0 2.2rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e3ddd3;
+        }
+
+        .highlight-card p {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #9b7e54;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #dac9b4;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            color: #7d623c;
+            text-decoration-color: #9b7e54;
+        }
+
+        .link-soft {
+            color: #7a6b58;
+        }
+
+        /* ---------- 页尾 ---------- */
+        .page-footer {
+            background: #eae5dc;
+            padding: 2rem 2rem 2.5rem 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #5b554a;
+            border-top: 1px solid #d9d0c2;
+            margin-top: auto;
+        }
+
+        .page-footer .footer-note {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .page-footer .footer-note a {
+            color: #6b5d48;
+        }
+
+        .page-footer .small-meta {
+            margin-top: 1.4rem;
+            font-size: 0.8rem;
+            color: #8c8378;
+            letter-spacing: 0.3px;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3.2rem 1.5rem 2.8rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+            .content {
+                padding: 2.2rem 1.2rem 3rem 1.2rem;
+            }
+            .section h2 {
+                font-size: 1.3rem;
+                padding-left: 0.8rem;
+            }
+            .highlight-card {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero .sub {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <h1>竞彩网 · 资料整理</h1>
+        <div class="sub">
+            从信息索引出发，梳理赛事数据与历史档案<br>
+            一个安静的聚合节点
+        </div>
+    </header>
+
+    <!-- 浅色正文区 -->
+    <main class="content">
+
+        <!-- 背景说明 -->
+        <div class="section">
+            <h2>从索引到脉络</h2>
+            <p>
+                网络上的竞彩内容常常零散分布，缺乏系统归类。两年前我开始留意到这个问题——赛事数据、赔率记录、球队档案往往散落在不同角落，查阅时既耗时又容易遗漏。后来逐渐积累了一些整理习惯：按赛季、联赛、对阵类型做基础分类，保留原始来源的标注，让信息本身保持可追溯的状态。
+            </p>
+            <p>
+                这个站点最初是一组本地文档，后来迁移到线上，慢慢变成了一个轻量的信息索引。它不追求即时更新，也不做预测分析，更像一个安静的参考书架——把不同来源的资料按时间、赛事、类型排列好，方便需要时翻查。
+            </p>
+        </div>
+
+        <!-- 三段自然介绍：资料整理方式 -->
+        <div class="section">
+            <h2>归类与标注</h2>
+            <p>
+                整理时主要遵循三个原则：保持原始数据完整、标注来源日期、按赛事周期归档。比如一场联赛的赛前赔率变化、赛后技术统计、相关球队的近期走势，都会归入同一个赛事文件夹下，并用统一的命名规则标记。这样无论从时间线还是对阵关系切入，都能快速定位到对应资料。
+            </p>
+            <p>
+                对于一些历史赛事，我会补充简短的背景笔记——当时的积分形势、主要球员变动、赛前舆论倾向等。这些笔记只记录公开可见的信息，不添加个人解读，目的是让阅读者自己判断。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>索引的边界</h2>
+            <p>
+                资料整理天然有边界。并非所有比赛都收录，也并非所有数据都保留完整。我更倾向于选择那些信息源清晰、可交叉验证的赛事记录。对于缺失的部分，会在索引中注明“待补充”或“来源不可考”，避免以偏概全。这个做法不算完美，但至少诚实。
+            </p>
+            <p>
+                整理本身也是一种筛选——留下的资料未必是最热门的，但通常是结构最完整、引用最方便的。如果你在寻找某个特定赛季或特定联赛的存档，不妨先浏览一下分类目录，或许会有发现。
+            </p>
+        </div>
+
+        <!-- 特点/场景 简短卡片 -->
+        <div class="highlight-card">
+            <p><strong>适用场景举例</strong></p>
+            <p>· 回顾过去几个赛季的联赛积分走势</p>
+            <p>· 查找某场焦点赛事的赛前数据与赛后统计</p>
+            <p>· 对比不同赛季的球队主客场表现</p>
+            <p>· 整理个人分析素材时作为参考索引</p>
+        </div>
+
+        <!-- FAQ 摘要风格段落 -->
+        <div class="section">
+            <h2>常见疑问</h2>
+            <p>
+                <strong>Q: 这里的资料更新频率如何？</strong><br>
+                不定期更新，视赛事节奏和资料完整度而定。没有固定周期，更看重每次更新时能补充多少有价值的索引。
+            </p>
+            <p>
+                <strong>Q: 数据来源可靠吗？</strong><br>
+                所有收录的数据都标注了原始来源和获取时间。主要来自公开赛事统计平台、联赛官网及经核验的第三方数据库。对于无法确认的数据，会明确标注“待核实”。
+            </p>
+            <p>
+                <strong>Q: 如何快速找到需要的资料？</strong><br>
+                建议先按赛季或联赛名称浏览分类目录，也可以直接搜索赛事关键词。如果找不到，可能是该部分尚未整理完成。
+            </p>
+        </div>
+
+    </main>
+
+    <!-- 页尾访问提示 -->
+    <footer class="page-footer">
+        <div class="footer-note">
+            如果你对赛事数据整理或历史索引感兴趣，可以浏览 
+            <a href="https://web--jingcai.com">竞彩网</a> 
+            的资料归档页面。那里保留了多个赛季的分类记录，以及一些赛事背景笔记。
+        </div>
+        <div class="small-meta">
+            资料索引 · 自然叙述 · 不做预测
+        </div>
+    </footer>
+
+</body>
+</html>
